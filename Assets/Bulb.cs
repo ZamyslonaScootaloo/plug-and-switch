@@ -6,11 +6,11 @@ public class Bulb : MonoBehaviour
     
     SpriteRenderer spriteRenderer;
 
-    private void Start()
+    private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
+    
 
 
     public void Power(Arguments args)

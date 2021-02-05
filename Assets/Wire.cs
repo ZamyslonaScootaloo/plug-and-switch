@@ -17,6 +17,7 @@ public class Wire : MonoBehaviour
     //   2
     [HideInInspector] public bool[] outs = new bool[4];
 
+    public Plug parent;
     public SpriteRenderer spriteRenderer;
 
     public void Refresh()

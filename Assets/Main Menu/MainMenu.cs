@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -37,7 +38,8 @@ public class MainMenu : MonoBehaviour
             switch(index)
             {
                 case 0:
-                    Debug.Log("Wybór poziomów");
+                    Debug.Log("Tymczasowo!");
+                    SceneManager.LoadScene(1);
                     break;
 
                 case 1:

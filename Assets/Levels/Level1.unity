@@ -746,6 +746,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a60c69c0fd0b1c4fab9efb1e55d0f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 0}
+  - {fileID: 0}
   history: []
   wires: []
   gameManager: {fileID: 1234069260}

@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.Collections;
+
 public class GameManager : MonoBehaviour
 {
     const int SIZE_X = 14;
@@ -23,27 +26,25 @@ public class GameManager : MonoBehaviour
     public GameObject plug;
 
     public Image prefab;
-
-    private void Start()
+    void Start()
     {
+        StartCoroutine(LateStart());
+    }
+    IEnumerator LateStart()
+    {
+        yield return new WaitForSeconds(0.01f);
         plug = GameObject.Find("Plug");
         plug.transform.position = (Vector2)plugPosition;
         plug.GetComponent<Plug>().SetRotation( plugPosition - enterance);
-        Refresh();
-
-        if (!map)
-            return;
-
-        for (int x = -1; x < SIZE_X + 1; x++)
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Battery"))
         {
-            for(int y = -1; y < SIZE_Y + 1; y++)
-            {
-                Color c = map.GetPixel(x, y);
-                
-                
-            }
+            batteries.Add(g.GetComponent<Battery>());
         }
+        Refresh();
     }
+
+
+    List<Battery> batteries = new List<Battery>();
 
     private void Update()
     {
@@ -64,5 +65,8 @@ public class GameManager : MonoBehaviour
             tens.sprite = numbers[t];
 
         unities.sprite = numbers[u];
+
+        foreach (Battery b in batteries)
+            b.Refresh();
     }
 }

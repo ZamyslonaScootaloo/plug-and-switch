@@ -47,6 +47,7 @@ public class Plug : MonoBehaviour
             else if ((dx != 0 && direction.x == -dx) || (dy != 0 && direction.y == -dy))
                 Undo();
 
+            gameManager.Refresh();
             return;
         }
 
@@ -95,7 +96,6 @@ public class Plug : MonoBehaviour
             // Gniazdka
             else if (hit.transform.CompareTag("Socket"))
             {
-           
                 return;
             }
         }
@@ -104,7 +104,7 @@ public class Plug : MonoBehaviour
 
         // Kolejne sprawdzenia...
         Wire nwire = Instantiate(wirePrefab, transform.position, Quaternion.identity).GetComponent<Wire>();
-
+        nwire.parent = this;
         nwire.outs[Wire.DirectionToIndex(direction)] = true;
 
         if (history.Count != 0)
@@ -140,9 +140,10 @@ public class Plug : MonoBehaviour
         }
     }
 
+    public int stop;
     private void Undo()
     {
-        if (history.Count <= 0)
+        if (history.Count <= 0 || history.Count <= stop)
             return;
 
         Vector2Int direction = history[history.Count - 1];

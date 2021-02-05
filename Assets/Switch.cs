@@ -11,6 +11,8 @@ public class Switch : MonoBehaviour
     public LayerMask obstacles;
     public void Power(Arguments args)
     {
+    
+
         // Kręcenie się!
         if (args.control)
         {
@@ -47,6 +49,15 @@ public class Switch : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
+            if (args.source == -DIRECTIONS[i])
+            {
+                if (!connections[i])
+                    return;
+            }
+        }
+
+        for (int i = 0; i < 4; i++)
+        {
             if (!connections[i])
                 continue;
             if (DIRECTIONS[i] == -args.source)
@@ -54,7 +65,7 @@ public class Switch : MonoBehaviour
 
             Collider2D hit = Physics2D.OverlapPoint(transform.position + (Vector3)DIRECTIONS[i], obstacles );
             if (hit) 
-                hit.transform.gameObject.SendMessage("Power", new Arguments(DIRECTIONS[i], args.control, args.off));
+                hit.transform.gameObject.SendMessage("Power", new Arguments(DIRECTIONS[i], false, args.off));
         }
     }
 }
