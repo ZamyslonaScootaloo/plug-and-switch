@@ -22,8 +22,9 @@ public class Switch : MonoBehaviour
                     continue;
 
                 Collider2D hit = Physics2D.OverlapPoint(transform.position + (Vector3)DIRECTIONS[i], obstacles);
+
                 if (hit)
-                    hit.transform.gameObject.SendMessage("Power", new Arguments(DIRECTIONS[i], false, args.off));
+                    hit.transform.gameObject.SendMessage("Power", new Arguments(DIRECTIONS[i], false, true));
             }
 
 
