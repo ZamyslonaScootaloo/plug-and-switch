@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Plug : MonoBehaviour
 {
+    public Sprite[] sprites = new Sprite[2];
     public List<Vector2Int> history = new List<Vector2Int>();
     public List<Wire> wires = new List<Wire>();
 
@@ -13,21 +14,15 @@ public class Plug : MonoBehaviour
     public LayerMask obstacles;
 
     GameObject socket;
-    
+    SpriteRenderer spriteRenderer;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            Undo();
-
-        if (socket)
-        {
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
-                socket.SendMessage("Power", new Arguments(Vector2.zero, true, false));
-            return;
-        }
-
-
         if (Input.GetKeyDown(KeyCode.W))
             Move(Vector2Int.up);
         else if (Input.GetKeyDown(KeyCode.A))
@@ -40,14 +35,32 @@ public class Plug : MonoBehaviour
 
     private void Move(Vector2Int direction)
     {
+        if (socket)
+        {
+            int dx = (int)(socket.transform.position.x - transform.position.x);
+            int dy = (int)(socket.transform.position.y - transform.position.y);
+
+
+            // Są w te same - połącz
+            if ((dx != 0 && direction.x == dx) || (dy != 0 && direction.y == dy)) 
+                socket.SendMessage("Power", new Arguments(Vector2.zero, true, false));
+            else if ((dx != 0 && direction.x == -dx) || (dy != 0 && direction.y == -dy))
+                Undo();
+
+            return;
+        }
+
+        if (history.Count != 0)
+        {
+            if (direction == -history[history.Count - 1])
+            {
+                Undo();
+                return;
+            }
+        }
+
         if (gameManager.length == 0)
             return;
-
-        // Zawracanie jest złe! 
-        if (history.Count != 0)
-            if (direction == -history[history.Count - 1])
-                return;
-
         int x = (int)transform.position.x;
         int y = (int)transform.position.y;
 
@@ -121,6 +134,8 @@ public class Plug : MonoBehaviour
             {
                 socket = hit.transform.gameObject;
                 socket.SendMessage("Power", new Arguments(Vector2.zero, false, false));
+                spriteRenderer.sprite = sprites[1];
+
             }
         }
     }
@@ -152,6 +167,7 @@ public class Plug : MonoBehaviour
         {
             socket.SendMessage("Power", new Arguments(Vector2.zero, false, true));
             socket = null;
+            spriteRenderer.sprite = sprites[0];
         }
         wires.RemoveAt(history.Count - 1);
         history.RemoveAt(history.Count - 1);
@@ -162,19 +178,19 @@ public class Plug : MonoBehaviour
 
     public void SetRotation(Vector2Int direction)
     {
-        int rotation = 0;
+        int rotation = 90;
 
         if (direction.x != 0)
         {
             if (direction.x == -1)
-                rotation = 90;
+                rotation = 180;
             else if (direction.x == 1)
-                rotation = 270;
+                rotation = 0;
         }
         else if (direction.y != 0)
         {
             if (direction.y == -1)
-                rotation = 180;
+                rotation = 270;
         }
         transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
