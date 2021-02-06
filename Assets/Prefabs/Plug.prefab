@@ -140,8 +140,5 @@ MonoBehaviour:
     type: 3}
   obstacles:
     serializedVersion: 2
-    m_Bits: 5632
-  undoLayer:
-    serializedVersion: 2
-    m_Bits: 4608
+    m_Bits: 1536
   stop: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7986604392521117009}
   - component: {fileID: 7986604392521117014}
   - component: {fileID: 7986604392521117015}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: Bulb
   m_TagString: Untagged
   m_Icon: {fileID: 0}

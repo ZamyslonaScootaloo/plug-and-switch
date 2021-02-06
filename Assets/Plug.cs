@@ -147,7 +147,7 @@ public class Plug : MonoBehaviour
             }
         }
     }
-    public LayerMask undoLayer;
+
     public int stop;
     private void Undo()
     {
@@ -163,7 +163,7 @@ public class Plug : MonoBehaviour
         int ny = y - direction.y;
 
 
-        Collider2D hit = Physics2D.OverlapPoint(new Vector2(nx, ny) + new Vector2(0.5f, 0.5f), undoLayer);
+        Collider2D hit = Physics2D.OverlapPoint(new Vector2(nx, ny) + new Vector2(0.5f, 0.5f), obstacles);
 
         if (hit)
         {

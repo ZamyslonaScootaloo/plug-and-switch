@@ -2960,12 +2960,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3440276702102790621, guid: 5318fa3bb7feadf478a52b290184012f,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 3292769801659628268, guid: 632634a7e8dffe64281cd4759f034d4e,
-        type: 3}
     - target: {fileID: 3440276702102790622, guid: 5318fa3bb7feadf478a52b290184012f,
         type: 3}
       propertyPath: m_Offset.x
