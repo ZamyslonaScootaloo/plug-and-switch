@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3584914681533485138}
   - component: {fileID: 3584914681533485141}
   - component: {fileID: 3584914681533485140}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Conductor_V
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,4 +125,4 @@ MonoBehaviour:
   connections: 01000100
   obstacles:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 6144

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -6,13 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private static int NUMBER_OF_LEVELS = 2;
+    private static int NUMBER_OF_LEVELS = 4;
     public Sprite[] mains;
     public Sprite[] levels;
 
     private bool main = true;
 
     private SpriteRenderer spriteRenderer;
+
+
 
     private List<GameObject> highlights = new List<GameObject>();
     private List<GameObject> padlocks = new List<GameObject>();
@@ -24,8 +27,13 @@ public class MainMenu : MonoBehaviour
 
     int index = 0;
 
+    AudioSource audioSource;
+    public AudioClip[] clips = new AudioClip[2];
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         for (int i = 0; i < transform.childCount; i++)
@@ -45,7 +53,7 @@ public class MainMenu : MonoBehaviour
         available = GetSave();
         Debug.Log(available);
     }
-
+    
     private void Update()
     {
         if (main)
@@ -57,6 +65,9 @@ public class MainMenu : MonoBehaviour
                 if (index < 0)
                     index = 2;
 
+                audioSource.clip = clips[0];
+                audioSource.Play();
+
                 spriteRenderer.sprite = mains[index];
             }
             else if (Input.GetKeyDown(KeyCode.S))
@@ -66,10 +77,16 @@ public class MainMenu : MonoBehaviour
                 if (index > 2)
                     index = 0;
 
+                audioSource.clip = clips[0];
+                audioSource.Play();
+
                 spriteRenderer.sprite = mains[index];
             }
             else if (Input.GetKeyDown(KeyCode.Return))
             {
+
+                audioSource.clip = clips[1];
+                audioSource.Play();
 
                 // Kto powiedział, że nie umiem w słicze?
                 switch (index)
@@ -146,13 +163,27 @@ public class MainMenu : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Return))
             {
                 if (available > index && index < NUMBER_OF_LEVELS)
-                    SceneManager.LoadScene(1 + index + page * 8);
+                {
+                    StartCoroutine(LoadScene(1 + index + page * 8));
+
+                    audioSource.clip = clips[1];
+                    audioSource.Play();
+                }
             }
         }
+    }
+    IEnumerator LoadScene(int id)
+    {
+        yield return new WaitForSeconds(0.05f);
+        SceneManager.LoadScene(id);
     }
 
     private void ChangeLevel(int offset) 
     {
+
+        audioSource.clip = clips[0];
+        audioSource.Play();
+
         highlights[index].SetActive(false);
         index += offset;
         highlights[index].SetActive(true);

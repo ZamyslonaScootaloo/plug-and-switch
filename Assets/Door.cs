@@ -3,7 +3,7 @@
 public class Door : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
-    public LayerMask wallLayer;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();

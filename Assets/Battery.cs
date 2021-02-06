@@ -12,7 +12,10 @@ public class Battery : MonoBehaviour
             Collider2D hit = Physics2D.OverlapPoint(transform.position + (Vector3)DIRECTIONS[i] + new Vector3(0.5f, 0.5f), obstacles);
 
             if (hit)
+            {
+                Debug.Log(hit.gameObject.name);
                 hit.transform.gameObject.SendMessage("Power", new Arguments(DIRECTIONS[i], false, false), SendMessageOptions.DontRequireReceiver);
+            }
         }
     }
 }
