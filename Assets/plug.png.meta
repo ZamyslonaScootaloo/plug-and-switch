@@ -4,25 +4,100 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -7895276478198028600
-    second: plug_0
+    second: wire_h
   - first:
       213: -67648117519220146
-    second: plug_1
+    second: wire_v
   - first:
       213: 6198730467971140741
-    second: plug_2
+    second: plug_u
   - first:
       213: 8891683982760389627
-    second: plug_3
+    second: wire_ur
   - first:
       213: -8375728107568057540
-    second: plug_4
+    second: wire_dr
   - first:
       213: 7511552973726231722
-    second: plug_5
+    second: plug_r
   - first:
       213: 61466542467137522
+    second: wire_dl
+  - first:
+      213: -995880410230840169
+    second: wire_h
+  - first:
+      213: 1460754363362738143
+    second: wire_v
+  - first:
+      213: -6528682684623133603
+    second: plug_u
+  - first:
+      213: 743249515648258141
+    second: wire_ur
+  - first:
+      213: -9031151576100021817
+    second: wire_dr
+  - first:
+      213: 2591376569427235294
+    second: plug_r
+  - first:
+      213: 1556467144822608987
+    second: wire_dl
+  - first:
+      213: 1420585834017078234
+    second: wire_ul
+  - first:
+      213: -4912158542688938978
+    second: plug_d
+  - first:
+      213: 7178544265160384207
+    second: plug_l
+  - first:
+      213: -995880410230840169
+    second: wire_h
+  - first:
+      213: -995880410230840169
+    second: plug_0
+  - first:
+      213: 1460754363362738143
+    second: plug_1
+  - first:
+      213: -6528682684623133603
+    second: plug_2
+  - first:
+      213: 743249515648258141
+    second: plug_3
+  - first:
+      213: -9031151576100021817
+    second: plug_4
+  - first:
+      213: 2591376569427235294
+    second: plug_5
+  - first:
+      213: 1556467144822608987
     second: plug_6
+  - first:
+      213: 9088625224932547591
+    second: plug_7
+  - first:
+      213: 7929917470332171639
+    second: plug_8
+  - first:
+      213: 6604556448036146603
+    second: plug_9
+  - first:
+      213: 8381059551678044177
+    second: plug_10
+  - first:
+      213: -6165179837225045579
+    second: plug_11
+  - first:
+      213: 841087895629853072
+    second: plug_12
+  - first:
+      213: -9185214170056312217
+    second: plug_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -68,7 +143,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 5
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -139,15 +214,15 @@ TextureImporter:
         y: 15
         width: 5
         height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c66281cfd75e6290800000000000000
-      internalID: -7895276478198028600
+      spriteID: 794ab651b0ced22f0800000000000000
+      internalID: -995880410230840169
       vertices: []
       indices: 
       edges: []
@@ -160,15 +235,15 @@ TextureImporter:
         y: 15
         width: 5
         height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e420b81456aaf0ff0800000000000000
-      internalID: -67648117519220146
+      spriteID: fdf7654aa54a54410800000000000000
+      internalID: 1460754363362738143
       vertices: []
       indices: 
       edges: []
@@ -181,15 +256,15 @@ TextureImporter:
         y: 15
         width: 5
         height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58c8fc1b480560650800000000000000
-      internalID: 6198730467971140741
+      spriteID: d546bc350b57565a0800000000000000
+      internalID: -6528682684623133603
       vertices: []
       indices: 
       edges: []
@@ -198,19 +273,19 @@ TextureImporter:
       name: plug_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
+        x: 15
+        y: 15
         width: 5
         height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfba67fd87b956b70800000000000000
-      internalID: 8891683982760389627
+      spriteID: d5012bf1f7d805a00800000000000000
+      internalID: 743249515648258141
       vertices: []
       indices: 
       edges: []
@@ -219,19 +294,19 @@ TextureImporter:
       name: plug_4
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
         y: 10
         width: 5
         height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c33b625a9af63cb80800000000000000
-      internalID: -8375728107568057540
+      spriteID: 7c959d99d77eaa280800000000000000
+      internalID: -9031151576100021817
       vertices: []
       indices: 
       edges: []
@@ -240,19 +315,19 @@ TextureImporter:
       name: plug_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 5
+        x: 5
+        y: 10
         width: 5
         height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aac2b76b1a56e3860800000000000000
-      internalID: 7511552973726231722
+      spriteID: ed11bfb924b66f320800000000000000
+      internalID: 2591376569427235294
       vertices: []
       indices: 
       edges: []
@@ -261,19 +336,166 @@ TextureImporter:
       name: plug_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 10
+        y: 10
         width: 5
         height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ff3355ae7f5ad000800000000000000
-      internalID: 61466542467137522
+      spriteID: b54d7b72f9ea99510800000000000000
+      internalID: 1556467144822608987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plug_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 10
+        width: 5
+        height: 5
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c52cc0d78412e70800000000000000
+      internalID: 9088625224932547591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plug_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 5
+        height: 5
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775305dbce9bc0e60800000000000000
+      internalID: 7929917470332171639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plug_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 5
+        height: 5
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badc538d81918ab50800000000000000
+      internalID: 6604556448036146603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plug_10
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 5
+        width: 5
+        height: 5
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1181a2be1418f4470800000000000000
+      internalID: 8381059551678044177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plug_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 5
+        width: 5
+        height: 5
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1fcc14a91e07aa0800000000000000
+      internalID: -6165179837225045579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plug_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 5
+        height: 5
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091f5eb1cf42cab00800000000000000
+      internalID: 841087895629853072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plug_13
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 5
+        height: 5
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ab8efa060978080800000000000000
+      internalID: -9185214170056312217
       vertices: []
       indices: 
       edges: []

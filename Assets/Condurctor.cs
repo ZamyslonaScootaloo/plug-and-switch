@@ -17,27 +17,10 @@ public class Condurctor : MonoBehaviour
             if (DIRECTIONS[i] == -args.source)
                 continue;
 
-            Collider2D hit = Physics2D.OverlapPoint(transform.position + (Vector3)DIRECTIONS[i], obstacles);
+            Collider2D hit = Physics2D.OverlapPoint(transform.position + (Vector3)DIRECTIONS[i] + new Vector3(0.5f, 0.5f), obstacles);
 
             if (hit)
                 hit.transform.gameObject.SendMessage("Power", new Arguments(DIRECTIONS[i], args.control, args.off), SendMessageOptions.DontRequireReceiver);
         }
-    }
-
-
-
-}
-
-public struct Arguments
-{
-    public bool control;
-    public Vector2 source;
-    public bool off;
-
-    public Arguments(Vector2 s, bool c, bool off)
-    {
-        source = s;
-        control = c;
-        this.off = off;
     }
 }

@@ -2,24 +2,15 @@
 
 public class Wire : MonoBehaviour
 {
-    /*
-     * 0 - h
-     * 1 - v
-     * 2 - ru
-     * 3 - rb
-     * 4 - lb
-     * 5 - lu
-     */
     public Sprite[] sprites;
-
-    //   0 
-    // 3   1
-    //   2
     [HideInInspector] public bool[] outs = new bool[4];
 
-    public Plug parent;
-    public SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
+    public void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     public void Refresh()
     {
         if(outs[0])

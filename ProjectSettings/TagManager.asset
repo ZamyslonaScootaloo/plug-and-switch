@@ -8,6 +8,8 @@ TagManager:
   - Wire
   - Socket
   - Battery
+  - Padlock
+  - Highlight
   layers:
   - Default
   - TransparentFX
