@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3431b4903e6e74d8c949f9bae8fa89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 00010000
+  connections: 01010101
   obstacles:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 6144
